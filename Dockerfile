@@ -11,15 +11,15 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy existing app
+# Copy project files
 COPY . .
 
-# Install dependencies
-RUN composer install --optimize-autoloader --no-dev
+# Install Laravel dependencies
+RUN composer install --no-dev --optimize-autoloader
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www
 
-# Expose port and start server
+# Expose port & start Laravel dev server
 EXPOSE 8000
 CMD php artisan serve --host=0.0.0.0 --port=8000
