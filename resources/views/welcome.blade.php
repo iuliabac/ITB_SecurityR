@@ -9,7 +9,7 @@
 <body class="bg-light d-flex align-items-center vh-100">
 
 <div class="container text-center">
-    <h1 class="mb-4">Welcome to Laravel App</h1>
+    <h1 class="mb-4">Welcome to The dashboard viewer!</h1>
 
     @auth
         <p>Hello, {{ auth()->user()->name }}!</p>
